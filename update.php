@@ -11,6 +11,9 @@ error_reporting(E_ALL ^ E_NOTICE);
 //Resolves a UUID to the ingame name by contacting Mojang's servers
 function lookupPlayerName($uuid) {
     $uuid = str_replace("-", "", $uuid);
+    if( $uuid === '') {
+        return null;
+    }
     $json = json_decode(file_get_contents("https://sessionserver.mojang.com/session/minecraft/profile/$uuid"), true);
     return $json['name'];
 }
@@ -62,7 +65,10 @@ if(is_dir($rawDataDir)) {
         if(is_file($jsonFile)) {
             //Extract UUID from file name
             $uuid = substr($f, 0, -5); //5 = length of ".json"
-
+            if (strlen($uuid) < 10) {
+                echo("Not a UUID: $uuid\n");
+                continue;
+            }
             //Check if UUID is in player cache
             if($forcePlayerCacheUpdate || !array_key_exists($uuid, $players)) {
                 //if not, look it up
@@ -75,7 +81,10 @@ if(is_dir($rawDataDir)) {
                     //fetch from Mojang
                     $playerName = lookupPlayerName($uuid);
                 }
-
+                if ($playerName === null) {
+                    echo("No name for Player with uuid $uuid... \n");
+                    continue;
+                }
                 $players[$uuid] = ['name' => $playerName];
                 echo($players[$uuid]['name'] . "\n");
             } else {
