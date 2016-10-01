@@ -1,4 +1,4 @@
-<?
+<?php 
     /**
      * Viewing a specific player.
      *
@@ -23,31 +23,31 @@
     }
 ?>
 <div id="header">
-    <? echo(createPlayerWidget($playerId, 64)); ?>
-    <?
+    <?php  echo(createPlayerWidget($playerId, 64)); ?>
+    <?php 
         if(!isset($me)) {
             ?>
-            <form action="index.php?player=<? echo($playerId); ?>" method="post">
-                <button name="itsme" value="<? echo($playerId); ?>" title="Click to create a shortcut to this profile.">
+            <form action="index.php?player=<?php  echo($playerId); ?>" method="post">
+                <button name="itsme" value="<?php  echo($playerId); ?>" title="Click to create a shortcut to this profile.">
                     This is me!
                 </button>
             </form>
-            <?
+            <?php 
         }
     ?>
 </div>
 <div id="listing-wrapper">
     <div class="listing">
-        <p class="date">Last online: <? echo(formatDate(getPlayerLastOnline($playerId))); ?></p>
-        <?
+        <p class="date">Last online: <?php  echo(formatDate(getPlayerLastOnline($playerId))); ?></p>
+        <?php 
             if($inactive) {
                 ?>
-                    <p class="inactive">This player has been inactive for over <? echo((int)($inactiveTime / 86400)); ?> days.</p>
-                <?
+                    <p class="inactive">This player has been inactive for over <?php  echo((int)($inactiveTime / 86400)); ?> days.</p>
+                <?php 
             } else {
                 ?>
-                <p>Medals held by <? echo(getPlayerName($playerId)); ?>:</p>
-                <?
+                <p>Medals held by <?php  echo(getPlayerName($playerId)); ?>:</p>
+                <?php 
                     //Count medals
                     $gold = 0;
                     $silver = 0;
@@ -77,25 +77,25 @@
                     <tbody>
                         <tr>
                             <td class="medal"><img src="img/fatcow/medal_award_gold.png"/></td>
-                            <td class="count"><? echo($gold); ?></td>
+                            <td class="count"><?php  echo($gold); ?></td>
                         </tr>
                         <tr>
                             <td class="medal"><img src="img/fatcow/medal_award_silver.png"/></td>
-                            <td class="count"><? echo($silver); ?></td>
+                            <td class="count"><?php  echo($silver); ?></td>
                         </tr>
                         <tr>
                             <td class="medal"><img src="img/fatcow/medal_award_bronze.png"/></td>
-                            <td class="count"><? echo($bronze); ?></td>
+                            <td class="count"><?php  echo($bronze); ?></td>
                         </tr>
                     </tbody>
                 </table>
-                <?
+                <?php 
             }
         ?>
     </div>
     <hr/>
     <div class="listing">
-        <p>Statistics by award (<a href="?raw=<? echo($playerId); ?>">view raw data</a>):</p> 
+        <p>Statistics by award (<a href="?raw=<?php  echo($playerId); ?>">view raw data</a>):</p> 
         <table class="listing">
             <colgroup>
                 <col style="width:40%;"/>
@@ -110,7 +110,7 @@
                     <th>Award</th>
                     <th>Rank</th>
                 </tr>
-                <?
+                <?php 
                     sortStatsByAwardName();
                     foreach($stats as $id => $stat) {
                         if(array_key_exists($id, $pstats)) {
@@ -129,18 +129,18 @@
                         ?>
                         <tr>
                             <td class="stat">
-                                <? echo($stat['desc']); ?>:
+                                <?php  echo($stat['desc']); ?>:
                             </td>
                             <td class="score">
-                                <?
+                                <?php 
                                     echo(isset($score) ? $score : '&mdash;');
                                 ?>
                             </td>
-                            <td class="award <? if(isset($rank)) { echo("place$rank"); } ?>"><span class="icon">
-                                <img src="<? echo(getStatIcon($stat)); ?>"/></span> <a href="?stat=<? echo($id); ?>"><? echo($stat['award']); ?></a>
+                            <td class="award <?php  if(isset($rank)) { echo("place$rank"); } ?>"><span class="icon">
+                                <img src="<?php  echo(getStatIcon($stat)); ?>"/></span> <a href="?stat=<?php  echo($id); ?>"><?php  echo($stat['award']); ?></a>
                             </td>
-                            <td class="rank <? if(isset($rank)) { echo("place$rank medal$rank"); } ?>">
-                                <?
+                            <td class="rank <?php  if(isset($rank)) { echo("place$rank medal$rank"); } ?>">
+                                <?php 
                                     if(isset($rank)) {
                                         echo('#' . ($rank + 1));
                                     } else {
@@ -149,7 +149,7 @@
                                 ?>
                             </td>
                         </tr>
-                        <?
+                        <?php 
                     }
                 ?>
             </tbody>

@@ -1,4 +1,4 @@
-<?
+<?php 
     /**
      * Updates or creates the prepared stats from the raw stats.
      */

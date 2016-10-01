@@ -1,4 +1,4 @@
-<?
+<?php 
     define('NBT_END', 0);
     define('NBT_BYTE', 1);
     define('NBT_SHORT', 2);

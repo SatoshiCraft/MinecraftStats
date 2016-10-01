@@ -1,4 +1,4 @@
-<?
+<?php 
     /**
      * Viewing search results.
      *
@@ -18,17 +18,17 @@
 <div id="listing-wrapper">
     <div class="listing">
         <div>
-            Your search for <span id="searchterm"><? echo(htmlspecialchars($search)); ?></span> yielded <? echo(count($searchResults)); ?> results:
+            Your search for <span id="searchterm"><?php  echo(htmlspecialchars($search)); ?></span> yielded <?php  echo(count($searchResults)); ?> results:
         </div>
         <div id="searchresults-wrapper">
             <div id="searchresults">
-            <?
+            <?php 
             foreach($searchResults as $uuid) {
                 ?>
                 <div class="searchresult">
-                <? echo(createPlayerWidget($uuid, 16)); ?>
+                <?php  echo(createPlayerWidget($uuid, 16)); ?>
                 </div>
-                <?
+                <?php 
             }
             ?>
             </div>

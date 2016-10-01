@@ -1,4 +1,4 @@
-<?
+<?php 
     /**
      * Viewing raw data of a specific player.
      *
@@ -56,16 +56,16 @@
     ksort($blockStats);
 ?>
 <div id="header">
-    <? echo(createPlayerWidget($playerId, 64)); ?>
+    <?php  echo(createPlayerWidget($playerId, 64)); ?>
 </div>
 <div id="listing-wrapper">
     <div class="listing">
-        <p class="date">Last online: <? echo(formatDate(getPlayerLastOnline($playerId))); ?></p>
-        <?
+        <p class="date">Last online: <?php  echo(formatDate(getPlayerLastOnline($playerId))); ?></p>
+        <?php 
             if($inactive) {
                 ?>
-                    <p class="inactive">This player has been inactive for over <? echo((int)($inactiveTime / 86400)); ?> days.</p>
-                <?
+                    <p class="inactive">This player has been inactive for over <?php  echo((int)($inactiveTime / 86400)); ?> days.</p>
+                <?php 
             }
         ?>
         <p>Raw craft, use/place and mine/destroy statisitcs:</p>
@@ -83,16 +83,16 @@
                     <th>Used/Placed</th>
                     <th>Mined/Destroyed</th>
                 </tr>
-                <?
+                <?php 
                     foreach($blockStats as $id => $stats) {
                         ?>
                             <tr>
-                            <td><? echo($id); ?></td>
-                            <td><? echo(safeGet('craft', $stats, 0)); ?></td>
-                            <td><? echo(safeGet('use', $stats, 0)); ?></td>
-                            <td><? echo(safeGet('mine', $stats, 0)); ?></td>
+                            <td><?php  echo($id); ?></td>
+                            <td><?php  echo(safeGet('craft', $stats, 0)); ?></td>
+                            <td><?php  echo(safeGet('use', $stats, 0)); ?></td>
+                            <td><?php  echo(safeGet('mine', $stats, 0)); ?></td>
                             </tr>
-                        <?
+                        <?php 
                     }
                 ?>
             </tbody>
@@ -109,19 +109,19 @@
                     <th>Stat</th>
                     <th>Value</th>
                 </tr>
-                <?
+                <?php 
                     foreach($otherStats as $key => $value) {
                         ?>
                             <tr>
-                            <td><? echo($key); ?></td>
-                            <td><? echo($value); ?></td>
+                            <td><?php  echo($key); ?></td>
+                            <td><?php  echo($value); ?></td>
                             </tr>
-                        <?
+                        <?php 
                     }
                 ?>
             </tbody>
         </table>
-        <?
+        <?php 
             if(isset($suspect)) {
         ?>
             <p>Suspect score details:</p>
@@ -135,23 +135,23 @@
                         <th>Key</th>
                         <th>Value</th>
                     </tr>
-                    <?
+                    <?php 
                         foreach($suspect['details'] as $key => $value) {
                             ?>
                                 <tr>
-                                <td><? echo($key); ?></td>
-                                <td><? echo(is_int($value) ? $value : number_format($value, 2)); ?></td>
+                                <td><?php  echo($key); ?></td>
+                                <td><?php  echo(is_int($value) ? $value : number_format($value, 2)); ?></td>
                                 </tr>
-                            <?
+                            <?php 
                         }
                     ?>
                     <tr>
                         <td>Total</td>
-                        <td><? echo((int)$suspect['score']); ?></td>
+                        <td><?php  echo((int)$suspect['score']); ?></td>
                     </tr>
                 </tbody>
             </table>
-        <?
+        <?php 
             }
         ?>
     </div>

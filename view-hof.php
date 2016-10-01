@@ -1,4 +1,4 @@
-<?
+<?php 
     /**
      * Viewing the hall of fame.
      *
@@ -18,14 +18,14 @@
 <div id="listing-wrapper">
     <div class="listing">
         <div id="king">
-            <p>The King of <? echo($title); ?> is:</p>
-            <? echo(createPlayerWidget(current($hof)['id'], 28, '<img class="crown" src="img/fatcow/crown_gold.png"/>')); ?>
+            <p>The King of <?php  echo($title); ?> is:</p>
+            <?php  echo(createPlayerWidget(current($hof)['id'], 28, '<img class="crown" src="img/fatcow/crown_gold.png"/>')); ?>
         </div>
         <p>
             Crown score ranking:<br/>
             The crown score is calculated using the medals a player holds.<br/>
-            A gold medal is worth <? echo($goldMedalScore); ?> points, a silver medal <? echo($silverMedalScore); ?> points
-            and a bronze medal <? echo($bronzeMedalScore . ($bronzeMedalScore > 1 ? ' points' : ' point')); ?>.
+            A gold medal is worth <?php  echo($goldMedalScore); ?> points, a silver medal <?php  echo($silverMedalScore); ?> points
+            and a bronze medal <?php  echo($bronzeMedalScore . ($bronzeMedalScore > 1 ? ' points' : ' point')); ?>.
         </p>
         <table class="listing">
             <colgroup>
@@ -45,19 +45,19 @@
                     <th><img src="img/fatcow/medal_award_gold.png"/></th>
                     <th>Crown Score</th>
                 </tr>
-                <?
+                <?php 
                     $i = 0;
                     foreach($hof as $id => $e) {
                         ?>
                         <tr>
-                            <td class="rank <? echo("place$i crown$i"); ?>"><? echo($i + 1); ?></td>
-                            <td class="player <? echo("place$i"); ?>"><? echo(createPlayerWidget($e['id'], 24)); ?></td>
-                            <td class="center score-bronze <? echo("place$i"); ?>"><? echo(safeGet('bronze', $e, 0)); ?></td>
-                            <td class="center score-silver <? echo("place$i"); ?>"><? echo(safeGet('silver', $e, 0)); ?></td>
-                            <td class="center score-gold <? echo("place$i"); ?>"><? echo(safeGet('gold', $e, 0)); ?></td>
-                            <td class="center score <? echo("place$i"); ?>"><? echo(safeGet('score', $e, 0)); ?></td>
+                            <td class="rank <?php  echo("place$i crown$i"); ?>"><?php  echo($i + 1); ?></td>
+                            <td class="player <?php  echo("place$i"); ?>"><?php  echo(createPlayerWidget($e['id'], 24)); ?></td>
+                            <td class="center score-bronze <?php  echo("place$i"); ?>"><?php  echo(safeGet('bronze', $e, 0)); ?></td>
+                            <td class="center score-silver <?php  echo("place$i"); ?>"><?php  echo(safeGet('silver', $e, 0)); ?></td>
+                            <td class="center score-gold <?php  echo("place$i"); ?>"><?php  echo(safeGet('gold', $e, 0)); ?></td>
+                            <td class="center score <?php  echo("place$i"); ?>"><?php  echo(safeGet('score', $e, 0)); ?></td>
                         </tr>
-                        <?
+                        <?php 
                         $i++;
                     }
                 ?>

@@ -1,11 +1,11 @@
-<?
+<?php 
     require_once('config.php');
     require_once('util.php');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><? echo($title); ?></title>
+    <title><?php  echo($title); ?></title>
     <link rel="stylesheet" href="style.css"/>
     <script src="jquery-2.1.1.min.js"></script>
     <script>
@@ -22,11 +22,11 @@
         function skinError(img, gender) {
             switch(gender) {
                 case 0:
-                    img.src = "<? echo($defaultSkins[0]); ?>";
+                    img.src = "<?php  echo($defaultSkins[0]); ?>";
                     break;
                 
                 case 1:
-                    img.src = "<? echo($defaultSkins[1]); ?>";
+                    img.src = "<?php  echo($defaultSkins[1]); ?>";
                     break;
             }
         }
@@ -40,7 +40,7 @@
     &nbsp;|&nbsp;
     <a href="?stat=stat.playOneMinute">List of players</a>
     
-    <?
+    <?php 
         function compareUUIDsByPlayerName($a, $b) {
             return strcasecmp(getPlayerName($a), getPlayerName($b));
         }
@@ -75,29 +75,29 @@
         }
     
         if(isset($me)) {
-            ?>&nbsp;|&nbsp;<?
+            ?>&nbsp;|&nbsp;<?php 
             echo(createPlayerWidget($me, 16));
             ?>
             <a class="notme" href="?notme">[X]</a>
-            <?
+            <?php 
         }
         
         ?>
             <form action="index.php" method="post">
             Player search: <input name="findname" type="text" size="16"/>
             <button name="goto">Go</button>
-            <?
+            <?php 
                 if(isset($formError)) {
                     echo("<span class=\"error\">$formError</span>");
                 }
             ?>
             </form>
-        <?
+        <?php 
     ?>
 </div>
 <div id="last-update">
     The statistics were last updated 
-    <?
+    <?php 
         if(is_file($lastUpdateFile)) {
             $lastUpdate = unserialize(file_get_contents($lastUpdateFile));
             
@@ -114,8 +114,8 @@
         }
     ?>
 </div>
-<h1><? echo($title); ?></h1>
-<?
+<h1><?php  echo($title); ?></h1>
+<?php 
     if(count($searchResults) > 1) {
         require("view-search.php");
     } else if(isset($_GET["stat"])) {
@@ -133,10 +133,10 @@
 <div id="clear">&nbsp;</div>
 <div id="foot">
     <div id="timezone">
-        All times are <? echo($timezone); ?>.
+        All times are <?php  echo($timezone); ?>.
     </div>
     <div id="legal">
-        <span class="hl">MinecraftStats Version <? echo($mcstatsVersion); ?></span>.
+        <span class="hl">MinecraftStats Version <?php  echo($mcstatsVersion); ?></span>.
         Written by Patrick Dinklage a.k.a. "pdinklag".<br/>
         Minecraft UI icons and default skins are trademarks and copyrights of <a href="http://mojang.com/">Mojang</a>.
         Images from the <a href="http://minecraft.gamepedia.com/Minecraft_Wiki">Minecraft Wiki</a> are licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CreativeCommons BY-NC-SA 3.0</a>.
