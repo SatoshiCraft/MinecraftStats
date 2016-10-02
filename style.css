@@ -9,9 +9,9 @@ body {
 
     font-family: 'minecraftfont';
     font-size: 12pt;
-    
+
     color: #FFFFFF;
-    
+
     background-image: url('img/bg/grass_side.png'), url('img/bg/dirt.png'), url('img/bg/stone.png');
     background-position: left top, left 64px, left 128px;
     background-repeat: repeat-x, repeat-x, repeat;
@@ -74,10 +74,10 @@ h1 {
     font-size: 125%;
     font-weight: normal;
     color: #C0C0C0;
-    
+
     margin-top: 1em;
     margin-bottom: 0;
-    
+
     text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -85,10 +85,10 @@ h1 {
     position: absolute;
     top: 0;
     right: 0;
-    
+
     font-size: 75%;
     color: #C0C0C0;
-    
+
     padding-top: 3ex;
     padding-right: 1em;
 }
@@ -97,10 +97,10 @@ h1 {
     position: absolute;
     top: 0;
     left: 0;
-    
+
     font-size: 75%;
     color: #C0C0C0;
-    
+
     padding-top: 3ex;
     padding-left: 1em;
 }
@@ -121,11 +121,11 @@ h1 {
 #header {
     margin-top: 0;
     margin-bottom: 0;
-    
+
     text-align: center;
     font-size: 350%;
     color: #FFFFFF;
-    
+
     text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -143,10 +143,10 @@ h1 {
 #header span.icon img {
     margin-left: 0px;
     margin-top: 6px;
-    
+
     max-width: 64px;
     max-height: 64px;
-    
+
     border: none;
 }
 
@@ -172,7 +172,7 @@ h1 {
 
 #listing-wrapper {
     margin-top: 2ex;
-    
+
     width: 60%;
     margin-left: 20%;
 }
@@ -254,7 +254,7 @@ table.listing th {
 table.listing td {
     padding: 0.5ex;
     border: 2px dotted #404040;
-    
+
     text-align: left;
 }
 
@@ -360,20 +360,15 @@ table.listing td.stat {
 }
 
 #awards {
-    width: 100%;
-    margin: 2ex;
+    margin-top: 15px;
+    padding-top: 10px;
 }
 
 #awards .award-box {
     font-size: 12pt;
-
     border: 2px solid #282828;
     border-radius: 6px;
     background-image: url('img/bg/stonebrick.png');
-    
-    float: left;
-    width: 22%;
-    
     margin-left: 0.5em;
     margin-right: 0.5em;
     margin-top: 1ex;
@@ -384,7 +379,7 @@ table.listing td.stat {
     width: 34px;
     height: 34px;
     float: left;
-    
+
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 4px;
 }
@@ -392,10 +387,10 @@ table.listing td.stat {
 #awards .award-box .award-icon img {
     margin-left: 2px;
     margin-top: 2px;
-    
+
     max-width: 30px;
     max-height: 30px;
-    
+
     border: none;
 }
 
@@ -403,10 +398,10 @@ table.listing td.stat {
     height: 34px;
 
     font-size: 125%;
-    
+
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 4px;
-    
+
     margin-left: 38px;
     padding-left: 0.5em;
 }
@@ -414,7 +409,7 @@ table.listing td.stat {
 #awards .award-box .award-winner-box {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 4px;
-    
+
     padding: 0.5ex;
     margin-top: 0.25ex;
 }
@@ -433,24 +428,24 @@ table.listing td.stat {
 #awards .award-box .award-text {
     text-align: center;
     color: #A0A0A0;
-    
+
     font-size: 75%;
 }
 
 #awards .award-box .award-text span.award-score {
     font-weight: bold;
-    
+
     margin-left: 0.5em;
 }
 
 #king {
     font-size: 150%;
     text-align: center;
-    
+
     border: 4px solid #FFE040;
     border-radius: 16px;
     background-image: url('img/bg/wool_colored_red.png');
-    
+
     margin-top: 1.5ex;
     margin-bottom: 1.5ex;
     padding-bottom: 1.5ex;
@@ -489,7 +484,7 @@ table.listing td.stat {
     float: left;
     position: relative;
     left: -50%;
-    
+
     text-align: left;
 }
 
@@ -515,15 +510,15 @@ table.listing td.stat {
 
     font-size: 75%;
     color: #808080;
-    
+
     text-align: center;
 }
 
 #legal {
     padding-bottom: 2ex;
-    
+
     text-align: center;
-    
+
     font-size: 50%;
     color: #808080;
 }
