@@ -148,6 +148,7 @@ h1 {
     max-height: 64px;
 
     border: none;
+    vertical-align: unset;
 }
 
 #header table td.award span.icon {
