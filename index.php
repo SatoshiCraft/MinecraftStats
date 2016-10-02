@@ -4,9 +4,12 @@
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <title><?php  echo($title); ?></title>
+  <head>
+    <title><?php echo($title); ?></title>
+    <?php //CSS ?>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v3.3.7/dist/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="style.css"/>
+    <?php // SCRIPTS ?>
     <script src="jquery-2.1.1.min.js"></script>
     <script>
         function skinLoaded(img) {
