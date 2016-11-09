@@ -26,19 +26,16 @@ if(isset($players[$playerId])) {
   <?php echo(createPlayerWidget($playerId, 64)); ?>
   <?php if(!isset($me)): ?>
     <form action="index.php?player=<?php echo($playerId); ?>" method="post">
-      <button name="itsme" value="<?php echo($playerId); ?>" title="Click to create a shortcut to this profile.">
-        This is me!
-      </button>
     </form>
   <?php endif; ?>
 </div>
 <div id="listing-wrapper">
   <div class="listing">
-    <p class="date">Last online: <?php echo(formatDate(getPlayerLastOnline($playerId))); ?></p>
+    <p class="date">Ultima vez online: <?php echo(formatDate(getPlayerLastOnline($playerId))); ?></p>
     <?php if($inactive): ?>
-      <p class="inactive">This player has been inactive for over <?php echo((int)($inactiveTime / 86400)); ?> days.</p>
+      <p class="inactive">Esse player esta inativo a mais de <?php echo((int)($inactiveTime / 86400)); ?> dias.</p>
     <?php else: ?>
-      <p>Medals held by <?php echo(getPlayerName($playerId)); ?>:</p>
+      <p>Medalhas ganhas por <?php echo(getPlayerName($playerId)); ?>:</p>
       <?php
       //Count medals
       $gold = 0;
@@ -67,15 +64,15 @@ if(isset($players[$playerId])) {
           <col style="width:50%;"/>
         </colgroup>
         <tbody>
-          <tr>
+          <tr class="tablem">
             <td class="medal"><img src="img/fatcow/medal_award_gold.png"/></td>
             <td class="count"><?php echo($gold); ?></td>
           </tr>
-          <tr>
+          <tr class="tablem">
             <td class="medal"><img src="img/fatcow/medal_award_silver.png"/></td>
             <td class="count"><?php echo($silver); ?></td>
           </tr>
-          <tr>
+          <tr class="tablem">
             <td class="medal"><img src="img/fatcow/medal_award_bronze.png"/></td>
             <td class="count"><?php echo($bronze); ?></td>
           </tr>
@@ -85,7 +82,7 @@ if(isset($players[$playerId])) {
   </div>
   <hr/>
   <div class="listing">
-    <p>Statistics by award (<a href="?raw=<?php echo($playerId); ?>">view raw data</a>):</p>
+    <p>Estatisticas por medalhas (<a href="?raw=<?php echo($playerId); ?>">veja dados brutos</a>):</p>
     <table class="listing">
       <colgroup>
         <col style="width:40%;"/>
@@ -95,9 +92,9 @@ if(isset($players[$playerId])) {
       </colgroup>
       <tbody>
         <tr>
-          <th>Stat</th>
-          <th>Score</th>
-          <th>Award</th>
+          <th>Estatistica</th>
+          <th>Pontos</th>
+          <th>Medalha</th>
           <th>Rank</th>
         </tr>
         <?php sortStatsByAwardName(); ?>

@@ -10,7 +10,7 @@ if(is_file($awardsFile)) {
     $awards = [];
 }
 ?>
-<div id="header">Awards</div>
+<div id="header">Medalhas</div>
 <div id="awards" class="container-fluid">
   <?php sortStatsByAwardName(); ?>
   <?php foreach($stats as $id => $stat): ?>

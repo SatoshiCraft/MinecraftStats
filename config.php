@@ -1,4 +1,5 @@
 <?php
+
 /**
  * General configuration.
  */
@@ -7,12 +8,12 @@ require_once("util.php");
 $mcstatsVersion = "1.00";
 
 //Time zone
-date_default_timezone_set('Europe/Berlin');
-$timezone = 'CEST';
+date_default_timezone_set('America/Sao_Paulo');
+$timezone = 'BRST';
 
 //Data structure
-$dataDir = "data";
-$rawDataDir = "raw";
+$dataDir = "/var/www/html/stats/data";
+$rawDataDir = "/var/www/html/stats/raw";
 
 $playerCacheFile = "$dataDir/players.txt";
 
@@ -28,14 +29,14 @@ $awardOutputFile = "$dataDir/awardsOutput.txt";
 $awardOutputFormat = "%A%;%W%;%D%;%S%\n";
 
 //General Settings
-$title = "DVG Snapshot Stats";
-$inactiveTime = 604800; //seven days
+$title = "SatoshiCraft";
+$inactiveTime = 432000; //seven days
 
 //Paging
 $itemsPerPage = 50;
 
 //Hall of Fame score settings
-$goldMedalScore   = 4;
+$goldMedalScore   = 3;
 $silverMedalScore = 2;
 $bronzeMedalScore = 1;
 

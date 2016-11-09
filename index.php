@@ -37,11 +37,11 @@ require_once('util.php');
   </head>
   <body>
     <div id="nav">
-      <a href="index.php">Awards</a>
+      <a href="index.php">Medalhas</a>
       &nbsp;|&nbsp;
-      <a href="?hof">Hall of Fame</a>
+      <a href="?hof">Hall da Fama</a>
       &nbsp;|&nbsp;
-      <a href="?stat=stat.playOneMinute">List of players</a>
+      <a href="?stat=stat.playOneMinute">Lista de players</a>
 
       <?php
       function compareUUIDsByPlayerName($a, $b) {
@@ -54,7 +54,7 @@ require_once('util.php');
           $searchResults = findPlayersByName($search);
 
           if(count($searchResults) == 0) {
-              $formError = "No matches for " . htmlspecialchars($search) . "!";
+              $formError = "Ninguem encontrado!";
           } else if(count($searchResults) == 1) {
               $foundUUID = $searchResults[0]; //only result
           } else {
@@ -84,7 +84,7 @@ require_once('util.php');
         <a class="notme" href="?notme">[X]</a>
       <?php endif; ?>
       <form action="index.php" method="post">
-        Player search: <input name="findname" type="text" size="16"/>
+        Pesquisa de players: <input name="findname" type="text" size="16"/>
         <button name="goto">Go</button>
         <?php if(isset($formError)): ?>
           <span class=\"error\"><?php echo $formError?></span>
@@ -94,7 +94,7 @@ require_once('util.php');
       ?>
     </div>
     <div id="last-update">
-      The statistics were last updated
+      As estatisticas foram atualizadas
       <?php
       if(is_file($lastUpdateFile)) {
           $lastUpdate = unserialize(file_get_contents($lastUpdateFile));
@@ -103,11 +103,11 @@ require_once('util.php');
           $deltaMinutes = (int)($delta / 60);
 
           if($delta >= 120) {
-              echo("$deltaMinutes minutes ago.");
+              echo("$deltaMinutes minutos atras.");
           } else if($delta >= 60) {
-              echo("a minute ago.");
+              echo("um minuto atras.");
           } else {
-              echo("$delta seconds ago.");
+              echo("$delta segundos atras.");
           }
       }
       ?>
@@ -131,13 +131,11 @@ require_once('util.php');
     <div id="clear">&nbsp;</div>
     <div id="foot">
       <div id="timezone">
-        All times are <?php echo($timezone); ?>.
+        Todos os horarios estao no Horario de Brasilia.
       </div>
       <div id="legal">
-        <span class="hl">MinecraftStats Version <?php echo($mcstatsVersion); ?></span>.
-        Written by Patrick Dinklage a.k.a. "pdinklag".<br/>
-        Minecraft UI icons and default skins are trademarks and copyrights of <a href="http://mojang.com/">Mojang</a>.
-        Images from the <a href="http://minecraft.gamepedia.com/Minecraft_Wiki">Minecraft Wiki</a> are licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CreativeCommons BY-NC-SA 3.0</a>.
+        <span class="hl">SatoshiCraft Stats <?php echo($mcstatsVersion); ?></span>.
+        Criado por pdinklag, editado e traduzido por Gabriel0Augusto.<br/>
       </div>
     </div>
   </body>

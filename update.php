@@ -2,10 +2,11 @@
 /**
  * Updates or creates the prepared stats from the raw stats.
  */
+shell_exec("/bin/cp -p -rf /root/servidor/world/stats/* /var/www/html/stats/raw/");
+shell_exec("/bin/cp -p -rf /root/servidor/usercache.json /var/www/html/stats/raw/");
 
 require_once('config.php');
 require_once('util.php');
-
 error_reporting(E_ALL ^ E_NOTICE);
 
 //Resolves a UUID to the ingame name by contacting Mojang's servers

@@ -13,12 +13,12 @@ if(is_file($hofFile)) {
 }
 ?>
 <div id="header">
-  Search results
+  Pesquisa
 </div>
 <div id="listing-wrapper">
   <div class="listing">
     <div>
-      Your search for <span id="searchterm"><?php  echo(htmlspecialchars($search)); ?></span> yielded <?php  echo(count($searchResults)); ?> results:
+      Sua pesquisa por <span id="searchterm"><?php  echo(htmlspecialchars($search)); ?></span> achou <?php  echo(count($searchResults)); ?> resultados:
     </div>
     <div id="searchresults-wrapper">
       <div id="searchresults">

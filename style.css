@@ -59,7 +59,8 @@ div.player-nobody div {
 }
 
 span.player img {
-    display: none; /* Magic will be done using JavaScript */
+    margin-right: 0.25em;
+    border: 1px solid #202020;
 }
 
 span.player canvas {
@@ -527,4 +528,9 @@ table.listing td.stat {
 
 #legal .hl, #legal a {
     color: #A0A0A0;
+}
+
+.tablem {
+    width: auto;
+    display: inline-block;
 }

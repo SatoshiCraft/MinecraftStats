@@ -13,19 +13,19 @@ if(is_file($hofFile)) {
 }
 ?>
 <div id="header">
-  Hall of Fame
+  Hall da fama
 </div>
 <div id="listing-wrapper">
   <div class="listing">
     <div id="king">
-      <p>The King of <?php echo($title); ?> is:</p>
+      <p>Rei do <?php echo($title); ?>:</p>
       <?php echo(createPlayerWidget(current($hof)['id'], 28, '<img class="crown" src="img/fatcow/crown_gold.png"/>')); ?>
     </div>
     <p>
-      Crown score ranking:<br/>
-      The crown score is calculated using the medals a player holds.<br/>
-      A gold medal is worth <?php echo($goldMedalScore); ?> points, a silver medal <?php echo($silverMedalScore); ?> points
-      and a bronze medal <?php echo($bronzeMedalScore . ($bronzeMedalScore > 1 ? ' points' : ' point')); ?>.
+      Forma de pontuacao:<br/>
+      A pontuacao e calculada com a quantidade de medalhas que um player possui.<br/>
+      Uma medalha de ouro vale <?php echo($goldMedalScore); ?> pontos, uma medalha de prata vale <?php echo($silverMedalScore); ?> pontos
+      e uma medalha de bronze vale <?php echo($bronzeMedalScore . ($bronzeMedalScore > 1 ? ' pontos' : ' ponto')); ?>.
     </p>
     <table class="listing">
       <colgroup>
@@ -43,7 +43,7 @@ if(is_file($hofFile)) {
           <th><img src="img/fatcow/medal_award_bronze.png"/></th>
           <th><img src="img/fatcow/medal_award_silver.png"/></th>
           <th><img src="img/fatcow/medal_award_gold.png"/></th>
-          <th>Crown Score</th>
+          <th>Pontos</th>
         </tr>
         <?php $i = 0; foreach($hof as $id => $e): ?>
           <tr>

@@ -30,7 +30,7 @@ function findPlayersByName($search) {
 }
 
 function formatDate($t) {
-    return date('M d, Y - H:i', $t);
+    return date('d/m/Y - H:i', $t);
 }
 
 function compareStatAwardNames($a, $b) {
@@ -89,7 +89,7 @@ function getPlayerSkin($uuid) {
     global $players;
 
     $urlName = urlencode($players[$uuid]['name']);
-    return "http://skins.minecraft.net/MinecraftSkins/$urlName.png";
+    return "https://mcapi.ca/avatar/2d/$urlName";
 
 }
 
@@ -135,16 +135,14 @@ function createPlayerWidget($uuid, $size, $inject = '') {
         '<span class="player '
       . (isPlayerInactive($uuid) ? 'inactive' : '') .
         '">' .
-        '<img src="' . getPlayerSkin($uuid) . '" ' .
-        'onload="skinLoaded(this);" onerror="skinError(this, ' . getDefaultSkinGender($uuid) .
-        ');"/><span><canvas width="' . $size . '" height="'.$size.'"/></span>' .
+        '<img src="' . getPlayerSkin($uuid) . '" width="' . $size . '" height="'.$size.'"/>' .
         "<a href='?player=$uuid'>" .
         getPlayerName($uuid) .
         '</a>' .
         $inject .
         '</span>';
     } else {
-        return '<div class="player-nobody"><div>Nobody</div></div>';
+        return '<div class="player-nobody"><div>Ninguem</div></div>';
     }
 }
 

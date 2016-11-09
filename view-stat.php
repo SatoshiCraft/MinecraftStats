@@ -48,7 +48,7 @@ if (isset($stats[$viewStatId])) {
 </div>
 <div id="listing-wrapper">
   <div class="listing">
-    <p>Ranking for the "<?php echo $viewStat['award']?>" award (<?php echo $viewStat['desc']?>):</p>
+    <p>Ranking para a medalha <?php echo $viewStat['award']?> (<?php echo $viewStat['desc']?>):</p>
     <table class="page">
       <colgroup>
         <col style="width: 20%"/>
@@ -58,30 +58,30 @@ if (isset($stats[$viewStatId])) {
       <tbody><tr>
         <td class="left">
           <?php if ($page == 'all' || $page > 1): ?>
-            <a href="?stat=<?php echo $viewStatId; ?>">&lt;&lt; First</a>
+            <a href="?stat=<?php echo $viewStatId; ?>">&lt;&lt; Primeira</a>
             <?php  if ($page != 'all'): ?>
-              | <a href="?stat=<?php echo $viewStatId; ?>&page=<?php echo $page - 1; ?>">&lt; Previous</a>
+              | <a href="?stat=<?php echo $viewStatId; ?>&page=<?php echo $page - 1; ?>">&lt; Anterior</a>
             <?php endif; ?>
           <?php endif; ?>
         </td>
         <td class="center">
           <?php if ($numItems == 0): ?>
-            No entries.
+            Sem players.
           <?php elseif ($page == 'all'): ?>
-            Showing all <?php echo $numItems; ?> entries.
+            Mostrando todos os <?php echo $numItems; ?> players.
           <?php else : ?>
-            Showing entries <?php echo $start + 1; ?> - <?php echo min($start + $num, $numItems); ?> of <?php echo $numItems; ?>.
+            Mostrando os <?php echo $start + 1; ?> - <?php echo min($start + $num, $numItems); ?> de <?php echo $numItems; ?>.
             <?php if ($numPages > 1): ?>
-              (<a href="?stat=<?php echo $viewStatId; ?>&all">show all</a>)
+              (<a href="?stat=<?php echo $viewStatId; ?>&all">mostrar todos</a>)
             <?php endif; ?>
           <?php endif; ?>
         </td>
         <td class="right">
           <?php if ($page == 'all' || $page < $numPages): ?>
             <?php if ($page != 'all'): ?>
-              <a href="?stat=<?php echo $viewStatId; ?>&page=<?php echo $page + 1; ?>">Next &gt;</a> |
+              <a href="?stat=<?php echo $viewStatId; ?>&page=<?php echo $page + 1; ?>">Proxima &gt;</a> |
             <?php endif; ?>
-            <a href="?stat=<?php echo $viewStatId; ?>&page=<?php echo $numPages; ?>">Last &gt;&gt;</a>
+            <a href="?stat=<?php echo $viewStatId; ?>&page=<?php echo $numPages; ?>">Ultima &gt;&gt;</a>
           <?php endif; ?>
         </td>
       </tr></tbody>
@@ -90,10 +90,10 @@ if (isset($stats[$viewStatId])) {
       <tbody>
         <tr>
           <th>Rank</th>
-          <th>Player</th>
+          <th>Jogador</th>
           <th><?php echo $viewStat['desc']?></th>
           <?php if ($isPlayerList): ?>
-            <th>Last Online</th>
+            <th>Ultima vez online</th>
           <?php endif; ?>
         </tr>
         <?php for ($k = 0; $k < $num && ($start + $k) < $numItems; ++$k):
